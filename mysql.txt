@@ -1,0 +1,29 @@
+--
+-- UPDATE
+--
+UPDATE tabla SET campo='valor' WHERE campo='valor';
+
+--
+-- VALORES REPETIDO DE DOS TABLAS
+--
+SELECT mail
+    FROM
+    (
+        SELECT mail
+        FROM tabla1
+        UNION ALL
+        SELECT mail
+        FROM tabla2
+    )  t
+    GROUP BY mail
+    HAVING COUNT(*) > 1
+    
+--
+-- BACK-UP DE UNA BASE DE DATOS
+--
+mysqldump -h host -u user -ppass base_datos > bbdd.sql
+
+--
+-- BACK-UP DE UNA TABLA
+--
+mysqldump -h host -u user -ppass base_datos tabla > tabla.sql
