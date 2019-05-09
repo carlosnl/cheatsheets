@@ -17,7 +17,23 @@ SELECT mail
     )  t
     GROUP BY mail
     HAVING COUNT(*) > 1
-    
+  
+--
+-- VALORES NO REPETIDOS
+--
+SELECT mail
+    FROM
+    (
+        SELECT mail
+        FROM webCrawler
+        UNION ALL
+        SELECT mail
+        FROM temporary
+    )  t
+    GROUP BY mail
+    HAVING COUNT(*) = 1
+
+
 --
 -- BACK-UP DE UNA BASE DE DATOS
 --
