@@ -1,11 +1,7 @@
---
 -- UPDATE
---
 UPDATE tabla SET campo='valor' WHERE campo='valor';
 
---
 -- VALORES REPETIDO DE DOS TABLAS
---
 SELECT mail
     FROM
     (
@@ -18,9 +14,7 @@ SELECT mail
     GROUP BY mail
     HAVING COUNT(*) > 1
   
---
 -- VALORES NO REPETIDOS
---
 SELECT mail
     FROM
     (
@@ -34,17 +28,11 @@ SELECT mail
     HAVING COUNT(*) = 1
 
 
---
 -- BACK-UP DE UNA BASE DE DATOS
---
 mysqldump -h host -u user -ppass base_datos > bbdd.sql
 
---
 -- BACK-UP DE LA ESTRUCTURA DE UNA BASE DE DATOS
---
 mysqldump -h host -u user -ppass -d base_datos > estructura-bbdd.sql
 
---
 -- BACK-UP DE UNA TABLA
---
 mysqldump -h host -u user -ppass base_datos tabla > tabla.sql
