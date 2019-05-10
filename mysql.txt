@@ -36,3 +36,6 @@ mysqldump -h host -u user -ppass -d base_datos > estructura-bbdd.sql
 
 -- BACK-UP DE UNA TABLA
 mysqldump -h host -u user -ppass base_datos tabla > tabla.sql
+
+-- Registros de la tabla1 que no existen en la tabla2
+SELECT * FROM TABLA1 WHERE NOT EXISTS (SELECT * FROM TABLA2 WHERE TABLA1.CLAVE=TABLA2.CLAVE)
