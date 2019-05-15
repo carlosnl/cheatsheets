@@ -1,3 +1,11 @@
+
+****************************
+* CAMBIAR PASSWORD DE ROOT *
+****************************
+USE mysql;
+UPDATE user SET password=PASSWORD("mypassword") WHERE user=root;
+FLUSH PRIVILEGES;
+
 -- UPDATE
 UPDATE tabla SET campo='valor' WHERE campo='valor';
 
