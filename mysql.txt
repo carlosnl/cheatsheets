@@ -3,7 +3,7 @@
 * CAMBIAR PASSWORD DE ROOT *
 ****************************
 USE mysql;
-UPDATE user SET password=PASSWORD("mypassword") WHERE user=root;
+UPDATE user SET password=PASSWORD('mypassword') WHERE user='root';
 FLUSH PRIVILEGES;
 
 -- UPDATE
