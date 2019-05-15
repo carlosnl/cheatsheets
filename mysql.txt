@@ -11,6 +11,11 @@ FLUSH PRIVILEGES;
 **********************************
 SHOW GRANTS FOR usuario;
 
+********************************************************
+* ASIGNAR TODOS LOS PERMISOS A UN USUARIO SOBRE UNA BD *
+********************************************************
+GRANT ALL PRIVILEGES ON bd_name.* TO usuario WITH GRANT OPTION;
+
 ***********************************
 * ACTUALIZAR EL VALOR DE UN CAMPO *
 ***********************************
