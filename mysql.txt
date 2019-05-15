@@ -6,34 +6,15 @@ USE mysql;
 UPDATE user SET password=PASSWORD('mypassword') WHERE user='root';
 FLUSH PRIVILEGES;
 
--- UPDATE
-UPDATE tabla SET campo='valor' WHERE campo='valor';
+**********************************
+* MOSTRAR PERMISOS DE UN USUARIO *
+**********************************
+SHOW GRANTS FOR usuario;
 
--- VALORES REPETIDO DE DOS TABLAS
-SELECT mail
-    FROM
-    (
-        SELECT mail
-        FROM tabla1
-        UNION ALL
-        SELECT mail
-        FROM tabla2
-    )  t
-    GROUP BY mail
-    HAVING COUNT(*) > 1
-  
--- VALORES NO REPETIDOS
-SELECT campo1
-    FROM
-    (
-        SELECT campo1
-        FROM tabla1
-        UNION ALL
-        SELECT campo1
-        FROM tabla2
-    )  t
-    GROUP BY mail
-    HAVING COUNT(*) = 1
+***********************************
+* ACTUALIZAR EL VALOR DE UN CAMPO *
+***********************************
+UPDATE tabla SET campo='valor' WHERE campo='valor';
 
 
 -- BACK-UP DE UNA BASE DE DATOS
